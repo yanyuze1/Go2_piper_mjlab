@@ -39,6 +39,8 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --num-envs 1
 ```
 
+![Environment check preview](images/image1.png)
+
 Run an environment check with random actions:
 
 ```bash
@@ -47,6 +49,8 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --viewer viser \
   --num-envs 1
 ```
+
+![Random-action playback preview](<images/2026-05-22 16-22-34.gif>)
 
 ## Training
 
@@ -91,6 +95,8 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --num-envs 1
 ```
 
+![Trained-policy playback preview](<images/2026-05-22 13-51-39.gif>)
+
 Visualization-only playback with terminations disabled:
 
 ```bash
@@ -103,7 +109,7 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
 
 ## sim2sim
 
-MuJoCo can be used for sim2sim validation. Specify the checkpoint file path when running.
+MuJoCo can be used for sim2sim validation. Specify the checkpoint file path when running. The current sim2sim performance is not ideal and will be improved in future updates.
 
 Specify task parameters:
 

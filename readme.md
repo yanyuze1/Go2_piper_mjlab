@@ -29,6 +29,8 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --viewer viser \
   --num-envs 1
 ```
+![Environment check preview](images/image1.png)
+
 运行环境检查，采取随机执行动作：
 ```bash
 uv run play Mjlab-Velocity-Flat-Go2arm \
@@ -36,6 +38,7 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --viewer viser \
   --num-envs 1
 ```
+![Random-action playback preview](<images/2026-05-22 16-22-34.gif>)
 ## 训练
 可以使用 wandb 或 tensorboard 进行日志记录，推荐使用 wandb 来实时可视化训练过程。
 
@@ -69,6 +72,8 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --viewer viser \
   --num-envs 1
 ```
+![Trained-policy playback preview](<images/2026-05-22 13-51-39.gif>)
+
 禁用终止条件的仅可视化播放：
 ```bash
 uv run play Mjlab-Velocity-Flat-Go2arm \
@@ -78,7 +83,7 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --no-terminations True
 ```
 ## sim2sim
-可使用 MuJoCo 完成 sim2sim 验证。运行时需指定 checkpoint 文件路径。
+可使用 MuJoCo 完成 sim2sim 验证。运行时需指定 checkpoint 文件路径。目前发现 sim2sim 的效果不理想，后续将会进行改进。
 
 指定任务参数：
 ```bash
