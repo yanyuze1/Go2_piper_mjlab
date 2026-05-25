@@ -1,4 +1,4 @@
-"""Sim-to-sim playback for the Go2 + ARX L5 policy in native MuJoCo.
+"""Sim-to-sim playback for the Go2 + Agilex Piper policy in native MuJoCo.
 
 This script runs a trained mjlab/RSL-RL checkpoint directly in MuJoCo.  It is
 intended as a light deployment sanity check: the observation order, action

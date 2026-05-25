@@ -1,4 +1,4 @@
-"""Keyboard-controlled sim-to-sim playback for Go2 + ARX L5 in MuJoCo.
+"""Keyboard-controlled sim-to-sim playback for Go2 + Agilex Piper in MuJoCo.
 
 This is an interactive version of ``sim2sim.py``.  It loads the same policy and
 observation/action pipeline, but lets you change base velocity and EE pose

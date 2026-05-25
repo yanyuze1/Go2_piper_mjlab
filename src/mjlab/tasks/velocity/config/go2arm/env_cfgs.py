@@ -1,4 +1,4 @@
-"""Go2 + ARX L5 arm velocity environment configurations."""
+"""Go2 + Agilex Piper arm velocity environment configurations."""
 
 import math
 from collections import OrderedDict
