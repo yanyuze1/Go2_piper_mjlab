@@ -54,14 +54,14 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
 
 ## Training
 
-You can use wandb or tensorboard for logging. wandb is recommended for real-time visualization of the training process.
+You can use wandb or tensorboard for logging. tensorboard is recommended for real-time visualization of the training process.
 
 Training on flat terrain:
 
 ```bash
 uv run train Mjlab-Velocity-Flat-Go2arm \
   --env.scene.num-envs 4096 \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
 
 Training on rough terrain:
@@ -69,7 +69,7 @@ Training on rough terrain:
 ```bash
 uv run train Mjlab-Velocity-Rough-Go2arm \
   --env.scene.num-envs 4096 \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
 
 Resume training:
@@ -81,8 +81,10 @@ uv run train Mjlab-Velocity-Flat-Go2arm \
   --agent.resume True \
   --agent.load-run RUN_DIRECTORY_NAME \
   --agent.load-checkpoint model_1000.pt \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
+
+![Environment check preview](images/image2.png)
 
 ## Play a Trained Policy
 
@@ -109,7 +111,7 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
 
 ## sim2sim
 
-MuJoCo can be used for sim2sim validation. Specify the checkpoint file path when running. The current sim2sim performance is not ideal and will be improved in future updates.
+MuJoCo can be used for sim2sim validation. Specify the checkpoint file path when running.
 
 Specify task parameters:
 
@@ -124,12 +126,16 @@ uv run python deploy/simulation/sim2sim.py \
   --ee-z 0.36
 ```
 
+![sim2sim task-parameter preview](<images/2026-05-25 18-12-50.gif>)
+
 Keyboard control:
 
 ```bash
 uv run python deploy/simulation/sim2sim_keyboard.py \
   --checkpoint /path/to/model.pt
 ```
+
+![sim2sim keyboard-control preview](<images/2026-05-25 18-19-57.gif>)
 
 # Acknowledgments
 

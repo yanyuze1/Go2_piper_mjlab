@@ -26,6 +26,8 @@ import mujoco
 import mujoco.viewer
 import numpy as np
 import torch
+import math
+
 
 from sim2sim import (
   ACTION_DIM,
@@ -52,12 +54,12 @@ COMMAND_LIMITS = {
   "lin_vel_x": (-0.3, 0.8),
   "lin_vel_y": (-0.5, 0.5),
   "ang_vel_z": (-0.8, 0.8),
-  "ee_x": (0.40, 0.60),
-  "ee_y": (-0.30, 0.30),
-  "ee_z": (0.22, 0.55),
-  "ee_roll": (-0.35, 0.35),
-  "ee_pitch_offset": (-0.35, 0.35),
-  "ee_yaw_offset": (-0.35, 0.35),
+  "ee_x": (0.50, 0.70),
+  "ee_y": (-0.35, 0.35),
+  "ee_z": (0.35, 0.60),
+  "ee_roll": (0.0, 0.0),
+  "ee_pitch_offset": (0.0,  math.pi / 9),
+  "ee_yaw_offset": ( math.pi / 9,  math.pi / 9),
 }
 
 
@@ -111,9 +113,9 @@ def print_command(command: SimpleNamespace) -> None:
 
 
 def reset_ee_command(command: SimpleNamespace) -> None:
-  command.ee_x = 0.48
+  command.ee_x = 0.60
   command.ee_y = 0.0
-  command.ee_z = 0.36
+  command.ee_z = 0.50
   command.ee_roll = 0.0
   command.ee_pitch_offset = 0.0
   command.ee_yaw_offset = 0.0
@@ -249,9 +251,9 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--lin-vel-x", type=float, default=0.2)
   parser.add_argument("--lin-vel-y", type=float, default=0.0)
   parser.add_argument("--ang-vel-z", type=float, default=0.0)
-  parser.add_argument("--ee-x", type=float, default=0.48)
+  parser.add_argument("--ee-x", type=float, default=0.60)
   parser.add_argument("--ee-y", type=float, default=0.0)
-  parser.add_argument("--ee-z", type=float, default=0.36)
+  parser.add_argument("--ee-z", type=float, default=0.50)
   parser.add_argument("--ee-roll", type=float, default=0.0)
   parser.add_argument("--ee-pitch-offset", type=float, default=0.0)
   parser.add_argument("--ee-yaw-offset", type=float, default=0.0)

@@ -39,20 +39,21 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --num-envs 1
 ```
 ![Random-action playback preview](<images/2026-05-22 16-22-34.gif>)
+
 ## 训练
-可以使用 wandb 或 tensorboard 进行日志记录，推荐使用 wandb 来实时可视化训练过程。
+可以使用 wandb 或 tensorboard 进行日志记录，推荐使用 tensorboard 来实时可视化训练过程。
 
 平坦地形训练：
 ```bash
 uv run train Mjlab-Velocity-Flat-Go2arm \
   --env.scene.num-envs 4096 \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
 崎岖地形训练：
 ```bash
 uv run train Mjlab-Velocity-Rough-Go2arm \
   --env.scene.num-envs 4096 \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
 恢复训练：
 ```bash
@@ -62,8 +63,10 @@ uv run train Mjlab-Velocity-Flat-Go2arm \
   --agent.resume True \
   --agent.load-run RUN_DIRECTORY_NAME \
   --agent.load-checkpoint model_1000.pt \
-  --agent.logger wandb
+  --agent.logger tensorboard
 ```
+![Environment check preview](images/image2.png)
+
 ## 播放训练策略
 播放策略时，请将 checkpoint-file 参数替换为训练过程中保存的模型文件路径。
 ```bash
@@ -83,7 +86,7 @@ uv run play Mjlab-Velocity-Flat-Go2arm \
   --no-terminations True
 ```
 ## sim2sim
-可使用 MuJoCo 完成 sim2sim 验证。运行时需指定 checkpoint 文件路径。目前发现 sim2sim 的效果不理想，后续将会进行改进。
+可使用 MuJoCo 完成 sim2sim 验证。运行时需指定 checkpoint 文件路径。
 
 指定任务参数：
 ```bash
@@ -96,11 +99,14 @@ uv run python deploy/simulation/sim2sim.py \
   --ee-y 0.0 \
   --ee-z 0.36
 ```
+![sim2sim 指定任务参数预览](<images/2026-05-25 18-12-50.gif>)
+
 键盘控制：
 ```bash
 uv run python deploy/simulation/sim2sim_keyboard.py \
   --checkpoint /path/to/model.pt
 ```
+![sim2sim 键盘控制预览](<images/2026-05-25 18-19-57.gif>)
 
 # 致谢
 该项目建立在 [mjlab](https://github.com/mujocolab/mjlab) 基础框架之上，感谢 mjlab 的作者和贡献者们将此项目开源提供给广大开发者使用。

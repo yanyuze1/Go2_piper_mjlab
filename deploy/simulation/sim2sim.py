@@ -66,9 +66,9 @@ DEFAULT_JOINT_POS = np.array(
     1.0,
     -1.5,
     0.0,
-    1.55,
-    0.95,
-    0.45,
+    1.57,
+    -1.3485,
+    0.0,
     0.0,
     0.0,
   ],
@@ -76,7 +76,7 @@ DEFAULT_JOINT_POS = np.array(
 )
 
 ACTION_SCALE = np.array(
-  [0.25] * 12 + [0.5] * 6,
+  [0.25] * 12 + [0.5, 0.7, 0.7, 0.7, 0.5, 0.5],
   dtype=np.float32,
 )
 
