@@ -95,9 +95,9 @@ uv run python deploy/simulation/sim2sim.py \
   --lin-vel-x 0.2 \
   --lin-vel-y 0.0 \
   --ang-vel-z 0.0 \
-  --ee-x 0.48 \
+  --ee-x 0.50 \
   --ee-y 0.0 \
-  --ee-z 0.36
+  --ee-z 0.60
 ```
 ![sim2sim 指定任务参数预览](<images/2026-05-25 18-12-50.gif>)
 
