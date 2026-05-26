@@ -27,7 +27,7 @@ from torch import nn
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_XML = (
-  REPO_ROOT / "src/mjlab/asset_zoo/robots/go2arm/xmls/go2arm.xml"
+  REPO_ROOT / "src/mjlab/asset_zoo/robots/go2arm/xmls/go2arm_scene.xml"
 )
 
 JOINT_NAMES = (
@@ -465,7 +465,7 @@ def parse_args() -> argparse.Namespace:
     default=True,
   )
   parser.add_argument("--render", action=argparse.BooleanOptionalAction, default=True)
-  parser.add_argument("--floor", action=argparse.BooleanOptionalAction, default=True)
+  parser.add_argument("--floor", action=argparse.BooleanOptionalAction, default=False)
   parser.add_argument("--action-clip", type=float, default=1.0)
   parser.add_argument("--lin-vel-x", type=float, default=0.3)
   parser.add_argument("--lin-vel-y", type=float, default=0.0)
