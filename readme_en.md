@@ -126,7 +126,7 @@ uv run python deploy/simulation/sim2sim.py \
   --ee-z 0.60
 ```
 
-![sim2sim task-parameter preview](<images/2026-05-25 18-12-50.gif>)
+![sim2sim task-parameter preview](<images/2026-05-27 09-41-51.gif>)
 
 Keyboard control:
 
@@ -135,7 +135,7 @@ uv run python deploy/simulation/sim2sim_keyboard.py \
   --checkpoint /path/to/model.pt
 ```
 
-![sim2sim keyboard-control preview](<images/2026-05-25 18-19-57.gif>)
+![sim2sim keyboard-control preview](<images/2026-05-27 09-46-51.gif>)
 
 # Acknowledgments
 

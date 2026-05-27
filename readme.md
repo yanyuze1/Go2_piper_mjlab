@@ -99,14 +99,14 @@ uv run python deploy/simulation/sim2sim.py \
   --ee-y 0.0 \
   --ee-z 0.60
 ```
-![sim2sim 指定任务参数预览](<images/2026-05-25 18-12-50.gif>)
+![sim2sim 指定任务参数预览](<images/2026-05-27 09-41-51.gif>)
 
 键盘控制：
 ```bash
 uv run python deploy/simulation/sim2sim_keyboard.py \
   --checkpoint /path/to/model.pt
 ```
-![sim2sim 键盘控制预览](<images/2026-05-25 18-19-57.gif>)
+![sim2sim 键盘控制预览](<images/2026-05-27 09-46-51.gif>)
 
 # 致谢
 该项目建立在 [mjlab](https://github.com/mujocolab/mjlab) 基础框架之上，感谢 mjlab 的作者和贡献者们将此项目开源提供给广大开发者使用。
